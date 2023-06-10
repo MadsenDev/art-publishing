@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    min-height: 100vh;
+}
+
+#sidebar {
+    background-color: #333;
+    width: 250px;
+    min-height: 100vh;
+}
+
+#content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+nav li {
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,55 @@
+[16-Apr-2023 20:36:31 UTC] PHP Warning:  include(head.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register.php on line 3
+[16-Apr-2023 20:36:31 UTC] PHP Warning:  include(): Failed opening 'head.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register.php on line 3
+[16-Apr-2023 20:36:31 UTC] PHP Warning:  include(session.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register.php on line 5
+[16-Apr-2023 20:36:31 UTC] PHP Warning:  include(): Failed opening 'session.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register.php on line 5
+[16-Apr-2023 20:36:39 UTC] PHP Warning:  include(db.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:36:39 UTC] PHP Warning:  include(): Failed opening 'db.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:36:39 UTC] PHP Warning:  include(session.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 3
+[16-Apr-2023 20:36:39 UTC] PHP Warning:  include(): Failed opening 'session.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 3
+[16-Apr-2023 20:36:39 UTC] PHP Notice:  Undefined variable: conn in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 9
+[16-Apr-2023 20:36:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/madsensd/aiart.madsens.dev/auth/register_process.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 9
+[16-Apr-2023 20:37:25 UTC] PHP Warning:  include(session.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:37:25 UTC] PHP Warning:  include(): Failed opening 'session.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:37:25 UTC] PHP Notice:  Undefined variable: conn in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:37:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/madsensd/aiart.madsens.dev/auth/register_process.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:40:32 UTC] PHP Warning:  include(/session.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:40:32 UTC] PHP Warning:  include(): Failed opening '/session.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:40:32 UTC] PHP Notice:  Undefined variable: conn in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:40:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/madsensd/aiart.madsens.dev/auth/register_process.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:41:39 UTC] PHP Warning:  include(/session.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:41:39 UTC] PHP Warning:  include(): Failed opening '/session.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:41:39 UTC] PHP Notice:  Undefined variable: conn in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:41:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/madsensd/aiart.madsens.dev/auth/register_process.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:42:42 UTC] PHP Warning:  include(/session.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:42:42 UTC] PHP Warning:  include(): Failed opening '/session.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:42:42 UTC] PHP Notice:  Undefined variable: conn in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:42:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/madsensd/aiart.madsens.dev/auth/register_process.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:42:47 UTC] PHP Warning:  include(/session.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:42:47 UTC] PHP Warning:  include(): Failed opening '/session.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 2
+[16-Apr-2023 20:42:47 UTC] PHP Notice:  Undefined variable: conn in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:42:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/madsensd/aiart.madsens.dev/auth/register_process.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:45:38 UTC] PHP Warning:  include(/db.php): failed to open stream: No such file or directory in /home/madsensd/aiart.madsens.dev/session.php on line 2
+[16-Apr-2023 20:45:38 UTC] PHP Warning:  include(): Failed opening '/db.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/madsensd/aiart.madsens.dev/session.php on line 2
+[16-Apr-2023 20:45:38 UTC] PHP Notice:  Undefined variable: conn in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
+[16-Apr-2023 20:45:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/madsensd/aiart.madsens.dev/auth/register_process.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/madsensd/aiart.madsens.dev/auth/register_process.php on line 8
