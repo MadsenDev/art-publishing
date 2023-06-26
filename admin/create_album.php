@@ -1,19 +1,44 @@
 <?php
 include('../session.php');
+include('../db.php');
+include('functions.php'); // Include the functions file
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    die('You must be logged in to create an album.');
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['name'];
-    $description = $_POST['description'];
-    $parent_album = isset($_POST['parent_album']) ? $_POST['parent_album'] : null;
+    $name = trim($_POST['name']);
+    $description = trim($_POST['description']);
+    $parent_album = !empty($_POST['parent_album']) ? $_POST['parent_album'] : null;
+    $user_id = $_SESSION['user_id'];
 
-    $stmt = $conn->prepare("INSERT INTO albums (user_id, name, description, parent_album) VALUES (:user_id, :name, :description, :parent_album)");
-    $stmt->bindParam(':user_id', $_SESSION['user_id']);
-    $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':description', $description);
-    $stmt->bindParam(':parent_album', $parent_album);
-    $stmt->execute();
-    header("Location: manage_albums.php");
+    // Input validation can be added here
+
+    // Prepare statement
+    if ($stmt = $conn->prepare("INSERT INTO albums (user_id, name, description, parent_album) VALUES (?, ?, ?, ?)")) {
+        // Bind parameters
+        $stmt->bind_param("isss", $user_id, $name, $description, $parent_album);
+
+        // Execute query
+        if ($stmt->execute()) {
+            header("Location: manage_albums.php");
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        // Close statement
+        $stmt->close();
+    }
 }
+
+// Fetch albums for selection
+$stmt = $conn->prepare("SELECT * FROM albums WHERE user_id = ?");
+$stmt->bind_param("i", $_SESSION['user_id']);
+$stmt->execute();
+$albums = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -40,16 +65,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <select name="parent_album" id="parent_album">
                     <option value="">None</option>
                     <?php
-                    $stmt = $conn->prepare("SELECT * FROM albums WHERE user_id = :user_id");
-                    $stmt->bindParam(':user_id', $_SESSION['user_id']);
-                    $stmt->execute();
-                    $albums = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    foreach ($albums as $album) {
-                        echo "<option value='{$album['id']}'>{$album['name']}</option>";
-                    }
+                    echo generateAlbumOptions($albums);
                     ?>
                 </select>
-                <button type="submit">Create Album</button>
+                <button type="submit" class="btn">Create Album</button>
             </form>
         </div>
     </div>

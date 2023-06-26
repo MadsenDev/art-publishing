@@ -1,3 +1,21 @@
+<?php
+include('../session.php');
+include('../db.php');
+include('functions.php'); // Make sure this includes the generateAlbumTableRows function
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    die('You must be logged in to manage albums.');
+}
+
+// Fetch albums associated with the logged-in user
+$stmt = $conn->prepare("SELECT * FROM albums WHERE user_id = ?");
+$stmt->bind_param('i', $_SESSION['user_id']);
+$stmt->execute();
+$albums = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +25,6 @@
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
-    <?php include('session.php'); ?>
     <div id="container">
         <div id="sidebar">
             <?php include('dashboard_sidebar.php'); ?>
@@ -24,28 +41,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    $user_id_query = $conn->prepare("SELECT id FROM users WHERE username = ?");
-                    $user_id_query->bind_param('s', $_SESSION['username']);
-                    $user_id_query->execute();
-                    $user_id_query->bind_result($user_id);
-                    $user_id_query->fetch();
-                    $user_id_query->close();
-                    
-                    $stmt->bind_param('isi', $user_id, $name, $description);                    
-                    foreach ($albums as $album) {
-                    ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($album['name']); ?></td>
-                        <td><?php echo htmlspecialchars($album['description']); ?></td>
-                        <td>
-                            <a href="edit_album.php?id=<?php echo $album['id']; ?>">Edit</a>
-                            <a href="delete_album.php?id=<?php echo $album['id']; ?>">Delete</a>
-                        </td>
-                    </tr>
-                    <?php
-                    }
-                    ?>
+                    <?php echo generateAlbumTableRows($albums); ?>
                 </tbody>
             </table>
         </div>

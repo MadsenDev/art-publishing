@@ -13,7 +13,7 @@ session_start();
     <ul>
         <li><a href="#">Home</a></li>
         <li><a href="manage_albums.php">Albums</a></li>
-        <li><a href="#">Images</a></li>
+        <li><a href="manage_images.php">Images</a></li>
         <li><a href="#">Settings</a></li>
     </ul>
 </nav>
